@@ -241,30 +241,38 @@ export default function ProjectForm() {
   // ─── Render helpers ──────────────────────────────────────────────────────
 
   const renderStep1 = () => (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="space-y-1">
         <span className="font-mono text-[9px] uppercase tracking-wider text-navy font-bold">STEP 1 OF 4</span>
         <h2 className="font-sans text-xl font-bold text-navy">Who are you?</h2>
-        <p className="font-sans text-xs text-slate-gray">Select the profile that best describes you or your organization.</p>
+        <p className="font-sans text-xs text-slate-gray">Select the profile that best describes you.</p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2.5">
         {[
-          { key: "individual_small_business", title: "An individual / small business", desc: "Ideal for solo creators, retail shops, and professional service providers." },
-          { key: "startup_growth", title: "A startup, still early", desc: "For early stage founders looking to validate ideas and launch MVPs." },
-          { key: "existing_company", title: "An existing company", desc: "For mature operations looking to build new SaaS platforms or scale current systems." },
+          { key: "individual_small_business", title: "An individual / small business", desc: "Solo creators, retail shops, professional service providers." },
+          { key: "startup_growth", title: "A startup, still early", desc: "Early stage founders validating ideas and launching MVPs." },
+          { key: "existing_company", title: "An existing company", desc: "Mature operations building SaaS platforms or scaling systems." },
         ].map((item) => (
           <button
             key={item.key}
             type="button"
             onClick={() => selectWhoAreYou(item.key as WhoAreYouType)}
-            className={`w-full p-4 text-left border rounded-lg transition-all duration-200 cursor-pointer ${
+            className={`w-full px-4 py-3 text-left border rounded-lg transition-all duration-200 cursor-pointer flex items-start gap-3 ${
               whoAreYou === item.key
                 ? "bg-steel-blue-soft border-navy border-2 shadow-sm"
                 : "bg-paper border-steel-blue/30 hover:border-navy"
             }`}
           >
-            <h3 className="font-sans text-sm font-bold text-navy">{item.title}</h3>
-            <p className="font-sans text-xs text-slate-gray mt-1 leading-relaxed">{item.desc}</p>
+            {/* Radio dot */}
+            <span className={`mt-0.5 w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-colors ${
+              whoAreYou === item.key ? "border-navy" : "border-steel-blue/50"
+            }`}>
+              {whoAreYou === item.key && <span className="w-2 h-2 rounded-full bg-navy" />}
+            </span>
+            <span className="flex flex-col">
+              <span className="font-sans text-sm font-bold text-navy leading-tight">{item.title}</span>
+              <span className="font-sans text-xs text-slate-gray mt-0.5 leading-relaxed">{item.desc}</span>
+            </span>
           </button>
         ))}
       </div>
@@ -272,30 +280,32 @@ export default function ProjectForm() {
   );
 
   const renderStep2 = () => (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="space-y-1">
         <span className="font-mono text-[9px] uppercase tracking-wider text-navy font-bold">STEP 2 OF 4</span>
         <h2 className="font-sans text-xl font-bold text-navy">What do you need?</h2>
-        <p className="font-sans text-xs text-slate-gray">Choose the core service option that best aligns with your request.</p>
+        <p className="font-sans text-xs text-slate-gray">Choose the option that best fits what you're looking for.</p>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2.5">
         {getNeedOptions().map((opt) => (
           <button
             key={opt.key}
             type="button"
             onClick={() => selectNeed(opt.key)}
-            className={`w-full h-12 px-4 text-left border rounded transition-all duration-200 cursor-pointer flex items-center justify-between ${
+            className={`w-full px-4 py-3 text-left border rounded-lg transition-all duration-200 cursor-pointer flex items-center gap-3 ${
               need === opt.key ? "bg-steel-blue-soft border-navy border-2" : "bg-paper border-steel-blue/30 hover:border-navy"
             }`}
           >
-            <span className="font-sans text-xs font-semibold text-navy">{opt.label}</span>
-            <span className="w-2.5 h-2.5 rounded-full border border-steel-blue/60 flex items-center justify-center">
-              {need === opt.key && <span className="w-1.5 h-1.5 rounded-full bg-navy" />}
+            <span className={`w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-colors ${
+              need === opt.key ? "border-navy" : "border-steel-blue/50"
+            }`}>
+              {need === opt.key && <span className="w-2 h-2 rounded-full bg-navy" />}
             </span>
+            <span className="font-sans text-xs font-semibold text-navy leading-snug">{opt.label}</span>
           </button>
         ))}
       </div>
-      <div className="flex justify-between items-center pt-2">
+      <div className="pt-1">
         <Button variant="secondary" size="sm" onClick={() => setStep(1)}>← Back</Button>
       </div>
     </div>
@@ -411,9 +421,9 @@ export default function ProjectForm() {
           )}
         </div>
 
-        <div className="flex justify-between items-center pt-2">
-          <Button variant="secondary" size="sm" onClick={() => setStep(2)}>← Back</Button>
-          <Button variant="primary" size="sm" onClick={handleBriefNext}>Continue →</Button>
+        <div className="flex flex-col-reverse sm:flex-row gap-3 pt-2">
+          <Button variant="secondary" size="sm" className="flex-1 justify-center" onClick={() => setStep(2)}>← Back</Button>
+          <Button variant="primary" size="sm" className="flex-1 justify-center" onClick={handleBriefNext}>Continue →</Button>
         </div>
       </div>
     );

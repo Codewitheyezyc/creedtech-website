@@ -43,7 +43,7 @@ export default function Button({
   if (href) {
     if (href.startsWith("/") && !external) {
       return (
-        <Link href={href} className={combinedClassName}>
+        <Link href={href} className={combinedClassName} {...(props as any)}>
           {children}
         </Link>
       );
