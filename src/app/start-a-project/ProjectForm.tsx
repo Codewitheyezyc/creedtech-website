@@ -257,7 +257,7 @@ export default function ProjectForm() {
             key={item.key}
             type="button"
             onClick={() => selectWhoAreYou(item.key as WhoAreYouType)}
-            className={`w-full p-4 text-left border-2 rounded-lg transition-all duration-200 cursor-pointer ${
+            className={`w-full p-4 text-left rounded-lg transition-all duration-200 cursor-pointer border-2 ${
               whoAreYou === item.key
                 ? "bg-steel-blue-soft border-navy shadow-sm"
                 : "bg-paper border-steel-blue/30 hover:border-navy/60"
@@ -284,16 +284,13 @@ export default function ProjectForm() {
             key={opt.key}
             type="button"
             onClick={() => selectNeed(opt.key)}
-            className={`w-full px-4 py-3.5 text-left border-2 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 ${
-              need === opt.key ? "bg-steel-blue-soft border-navy" : "bg-paper border-steel-blue/30 hover:border-navy/60"
+            className={`w-full px-4 py-3.5 text-left border-2 rounded-lg transition-all duration-200 cursor-pointer ${
+              need === opt.key
+                ? "bg-steel-blue-soft border-navy"
+                : "bg-paper border-steel-blue/30 hover:border-navy/60"
             }`}
           >
             <span className="font-sans text-sm font-semibold text-navy leading-snug">{opt.label}</span>
-            <span className={`w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-colors ${
-              need === opt.key ? "border-navy bg-navy" : "border-steel-blue/50"
-            }`}>
-              {need === opt.key && <span className="w-1.5 h-1.5 rounded-full bg-paper" />}
-            </span>
           </button>
         ))}
       </div>
@@ -413,9 +410,9 @@ export default function ProjectForm() {
           )}
         </div>
 
-        <div className="flex flex-row gap-3 pt-2">
-          <Button variant="secondary" size="sm" className="flex-1" onClick={() => setStep(2)}>← Back</Button>
-          <Button variant="primary" size="sm" className="flex-1" onClick={handleBriefNext}>Continue →</Button>
+        <div className="flex flex-col gap-3 pt-2">
+          <Button variant="primary" size="md" className="w-full" onClick={handleBriefNext}>Continue →</Button>
+          <Button variant="secondary" size="md" className="w-full" onClick={() => setStep(2)}>← Back</Button>
         </div>
       </div>
     );
