@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import PageContainer from "@/components/PageContainer";
 import Button from "@/components/Button";
+import { PILLAR_PRICING, FAQ_PRICING_ORDER, getPillarStartingFrom } from "@/lib/pricing";
 
 // ─── Illustrations ──────────────────────────────────────────────────────────
 
@@ -168,14 +169,30 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         q: "How much does a project cost?",
         a: (
-          <>
-            Starting prices:{" "}
-            <strong className="text-navy">SaaS for Companies</strong> from ₦2,500,000 &nbsp;·&nbsp;{" "}
-            <strong className="text-navy">Startup Growth</strong> from ₦1,500,000 &nbsp;·&nbsp;{" "}
-            <strong className="text-navy">Individuals &amp; Small Business</strong> from ₦180,000 &nbsp;·&nbsp;{" "}
-            <strong className="text-navy">Scaling</strong> from ₦2,000,000.{" "}
-            Final pricing depends on scope — these are starting points, not fixed quotes.
-          </>
+          <div className="space-y-3">
+            <p className="font-sans text-sm text-slate-gray leading-relaxed">
+              Every pillar has a different starting point. These are the minimum entry prices — final cost depends on your specific scope.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              {FAQ_PRICING_ORDER.map((key) => {
+                const p = PILLAR_PRICING[key];
+                const startingFrom = getPillarStartingFrom(key);
+                return (
+                  <div key={key} className="border border-steel-blue/20 rounded p-3 bg-paper flex flex-col gap-1">
+                    <span className="font-mono text-[9px] uppercase tracking-wider text-navy font-bold">{p.label}</span>
+                    {startingFrom ? (
+                      <span className="font-sans text-sm font-bold text-charcoal">Starting from {startingFrom}</span>
+                    ) : (
+                      <span className="font-sans text-xs text-slate-gray leading-normal">{p.priceNote}</span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <p className="font-sans text-xs text-slate-gray/80 leading-relaxed">
+              Payment is in Naira. Most projects use a deposit-then-balance structure — you don't pay everything upfront.
+            </p>
+          </div>
         ),
       },
       {
@@ -239,7 +256,7 @@ function AccordionItem({ q, a, isOpen, onToggle }: { q: string; a: string | Reac
             className="overflow-hidden"
           >
             <div className="pb-4 pr-8">
-              <p className="font-sans text-sm text-slate-gray leading-relaxed">{a}</p>
+              <div className="font-sans text-sm text-slate-gray leading-relaxed">{a}</div>
             </div>
           </motion.div>
         )}
