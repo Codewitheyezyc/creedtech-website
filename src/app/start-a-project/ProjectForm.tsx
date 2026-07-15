@@ -245,34 +245,26 @@ export default function ProjectForm() {
       <div className="space-y-1">
         <span className="font-mono text-[9px] uppercase tracking-wider text-navy font-bold">STEP 1 OF 4</span>
         <h2 className="font-sans text-xl font-bold text-navy">Who are you?</h2>
-        <p className="font-sans text-xs text-slate-gray">Select the profile that best describes you.</p>
+        <p className="font-sans text-xs text-slate-gray">Select the profile that best describes you or your organization.</p>
       </div>
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-3">
         {[
-          { key: "individual_small_business", title: "An individual / small business", desc: "Solo creators, retail shops, professional service providers." },
-          { key: "startup_growth", title: "A startup, still early", desc: "Early stage founders validating ideas and launching MVPs." },
-          { key: "existing_company", title: "An existing company", desc: "Mature operations building SaaS platforms or scaling systems." },
+          { key: "individual_small_business", title: "An individual / small business", desc: "Ideal for solo creators, retail shops, and professional service providers." },
+          { key: "startup_growth", title: "A startup, still early", desc: "For early stage founders looking to validate ideas and launch MVPs." },
+          { key: "existing_company", title: "An existing company", desc: "For mature operations looking to build new SaaS platforms or scale current systems." },
         ].map((item) => (
           <button
             key={item.key}
             type="button"
             onClick={() => selectWhoAreYou(item.key as WhoAreYouType)}
-            className={`w-full px-4 py-3 text-left border rounded-lg transition-all duration-200 cursor-pointer flex items-start gap-3 ${
+            className={`w-full p-4 text-left border-2 rounded-lg transition-all duration-200 cursor-pointer ${
               whoAreYou === item.key
-                ? "bg-steel-blue-soft border-navy border-2 shadow-sm"
-                : "bg-paper border-steel-blue/30 hover:border-navy"
+                ? "bg-steel-blue-soft border-navy shadow-sm"
+                : "bg-paper border-steel-blue/30 hover:border-navy/60"
             }`}
           >
-            {/* Radio dot */}
-            <span className={`mt-0.5 w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-colors ${
-              whoAreYou === item.key ? "border-navy" : "border-steel-blue/50"
-            }`}>
-              {whoAreYou === item.key && <span className="w-2 h-2 rounded-full bg-navy" />}
-            </span>
-            <span className="flex flex-col">
-              <span className="font-sans text-sm font-bold text-navy leading-tight">{item.title}</span>
-              <span className="font-sans text-xs text-slate-gray mt-0.5 leading-relaxed">{item.desc}</span>
-            </span>
+            <h3 className="font-sans text-sm font-bold text-navy">{item.title}</h3>
+            <p className="font-sans text-xs text-slate-gray mt-1 leading-relaxed">{item.desc}</p>
           </button>
         ))}
       </div>
@@ -284,24 +276,24 @@ export default function ProjectForm() {
       <div className="space-y-1">
         <span className="font-mono text-[9px] uppercase tracking-wider text-navy font-bold">STEP 2 OF 4</span>
         <h2 className="font-sans text-xl font-bold text-navy">What do you need?</h2>
-        <p className="font-sans text-xs text-slate-gray">Choose the option that best fits what you're looking for.</p>
+        <p className="font-sans text-xs text-slate-gray">Choose the core service that best fits what you need.</p>
       </div>
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-3">
         {getNeedOptions().map((opt) => (
           <button
             key={opt.key}
             type="button"
             onClick={() => selectNeed(opt.key)}
-            className={`w-full px-4 py-3 text-left border rounded-lg transition-all duration-200 cursor-pointer flex items-center gap-3 ${
-              need === opt.key ? "bg-steel-blue-soft border-navy border-2" : "bg-paper border-steel-blue/30 hover:border-navy"
+            className={`w-full px-4 py-3.5 text-left border-2 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 ${
+              need === opt.key ? "bg-steel-blue-soft border-navy" : "bg-paper border-steel-blue/30 hover:border-navy/60"
             }`}
           >
+            <span className="font-sans text-sm font-semibold text-navy leading-snug">{opt.label}</span>
             <span className={`w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-colors ${
-              need === opt.key ? "border-navy" : "border-steel-blue/50"
+              need === opt.key ? "border-navy bg-navy" : "border-steel-blue/50"
             }`}>
-              {need === opt.key && <span className="w-2 h-2 rounded-full bg-navy" />}
+              {need === opt.key && <span className="w-1.5 h-1.5 rounded-full bg-paper" />}
             </span>
-            <span className="font-sans text-xs font-semibold text-navy leading-snug">{opt.label}</span>
           </button>
         ))}
       </div>
@@ -421,9 +413,9 @@ export default function ProjectForm() {
           )}
         </div>
 
-        <div className="flex flex-col-reverse sm:flex-row gap-3 pt-2">
-          <Button variant="secondary" size="sm" className="flex-1 justify-center" onClick={() => setStep(2)}>← Back</Button>
-          <Button variant="primary" size="sm" className="flex-1 justify-center" onClick={handleBriefNext}>Continue →</Button>
+        <div className="flex flex-row gap-3 pt-2">
+          <Button variant="secondary" size="sm" className="flex-1" onClick={() => setStep(2)}>← Back</Button>
+          <Button variant="primary" size="sm" className="flex-1" onClick={handleBriefNext}>Continue →</Button>
         </div>
       </div>
     );

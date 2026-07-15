@@ -48,8 +48,10 @@ export default function WorkPage() {
                   </p>
                 </div>
                 <div>
-                  <Button href="https://cognaralearn.com" external variant="primary" size="sm">
-                    Visit cognaralearn.com →
+                  <Button href="https://cognaralearn.com" external variant="primary" size="sm" className="whitespace-nowrap">
+                    <span className="hidden sm:inline">Visit cognaralearn.com</span>
+                    <span className="sm:hidden">Visit Cognara</span>
+                    &nbsp;→
                   </Button>
                 </div>
               </div>
