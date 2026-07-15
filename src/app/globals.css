@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Design Token Colors */
+  --color-charcoal: #14171A;
+  --color-paper: #F7F5F0;
+  --color-navy: #0B1F3A;
+  --color-steel-blue: #A9B8CC;
+  --color-slate-gray: #4A4F55;
+  --color-warm-amber: #E3A046;
+
+  /* Strict Spacing Scale (8px scale: 8/16/24/32/48/64/96px) */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  /* Subtle background pattern color (4% opacity steel blue) */
+  --grid-pattern-color: rgba(169, 184, 204, 0.04);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Assign theme colors */
+  --color-charcoal: var(--color-charcoal);
+  --color-paper: var(--color-paper);
+  --color-navy: var(--color-navy);
+  --color-steel-blue: var(--color-steel-blue);
+  --color-steel-blue-soft: rgba(169, 184, 204, 0.15);
+  --color-slate-gray: var(--color-slate-gray);
+  --color-amber: var(--color-warm-amber);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Map core utility classes */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-charcoal);
+
+  /* Fonts */
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-roboto-mono), monospace;
+
+  /* Strict Spacing Scale mapping */
+  --spacing-1: var(--space-8);
+  --spacing-2: var(--space-16);
+  --spacing-3: var(--space-24);
+  --spacing-4: var(--space-32);
+  --spacing-6: var(--space-48);
+  --spacing-8: var(--space-64);
+  --spacing-12: var(--space-96);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-charcoal);
+  background-image: radial-gradient(var(--grid-pattern-color) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
+
