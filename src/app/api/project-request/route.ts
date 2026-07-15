@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend is disabled for now per user request. To enable later, uncomment the Resend imports and calls.
+// import { Resend } from "resend";
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -64,7 +65,8 @@ export async function POST(request: Request) {
     let emailSent = false;
     let emailErrorWarning = "";
 
-    // 2. Send emails via Resend
+    // 2. Send emails via Resend (Disabled for Vercel deployment without API Key)
+    /*
     if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== "re_your_api_key_here") {
       try {
         // Send confirmation email to the submitter
@@ -163,6 +165,8 @@ export async function POST(request: Request) {
     } else {
       emailErrorWarning = "Submission saved in database, but Resend API Key is unconfigured.";
     }
+    */
+    emailErrorWarning = "";
 
     return NextResponse.json({
       success: true,
