@@ -45,9 +45,9 @@ export default function Footer() {
     <footer className="w-full bg-paper border-t border-steel-blue/20 mt-auto">
       <PageContainer className="py-12 flex flex-col gap-8">
         {/* Main Footer Layout: Split left tagline & right link columns */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Logo & Tagline column */}
-          <div className="md:col-span-6 space-y-4">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-8">
+          {/* Logo, Tagline & Social column */}
+          <div className="col-span-2 md:col-span-6 space-y-4">
             <Link href="/" className="flex items-center gap-1.5 group w-fit">
               <Logo className="h-8 w-8 transition-transform group-hover:scale-105 duration-200" />
               <span className="font-sans font-bold text-lg text-charcoal tracking-tight">
@@ -57,6 +57,12 @@ export default function Footer() {
             <p className="font-sans text-sm text-slate-gray max-w-sm leading-relaxed">
               A software studio in Lagos, Nigeria. We build digital products and growth engines that help people and businesses reach their full potential.
             </p>
+            <div className="flex gap-4 items-center">
+              <a href="#" aria-label="Instagram"><InstagramIcon /></a>
+              <a href="#" aria-label="X (Twitter)"><XIcon /></a>
+              <a href="#" aria-label="LinkedIn"><LinkedInIcon /></a>
+              <a href="#" aria-label="GitHub"><GitHubIcon /></a>
+            </div>
           </div>
 
           {/* Links Column 1: Explore */}
@@ -101,14 +107,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* Social Icons row */}
-        <div className="flex gap-4 items-center">
-          <a href="#" aria-label="Instagram"><InstagramIcon /></a>
-          <a href="#" aria-label="X (Twitter)"><XIcon /></a>
-          <a href="#" aria-label="LinkedIn"><LinkedInIcon /></a>
-          <a href="#" aria-label="GitHub"><GitHubIcon /></a>
         </div>
 
         {/* Bottom bar with relationship context and copyright */}

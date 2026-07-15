@@ -132,11 +132,11 @@ export default function ContactPage() {
             </div>
 
             {/* Social Links */}
-            <div className="bg-paper p-6 border border-steel-blue/30 rounded-lg shadow-sm space-y-4">
+            <div className="pt-6 border-t border-steel-blue/20 space-y-4">
               <span className="font-mono text-xs uppercase tracking-wider text-navy font-bold block">
                 Follow Creed Tech
               </span>
-              <div className="flex flex-wrap gap-4 text-sm font-bold">
+              <div className="flex flex-wrap gap-6 text-sm font-bold">
                 <a href="https://twitter.com/creedtech" target="_blank" rel="noopener noreferrer"
                   className="text-slate-gray hover:text-navy transition-colors border-b-2 border-transparent hover:border-navy pb-0.5">
                   Twitter

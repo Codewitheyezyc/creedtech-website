@@ -45,7 +45,7 @@ export default function AboutPage() {
         <PageContainer>
           <div className="space-y-8">
             {/* Manifesto Section - Structured as a Grid to include ManifestoIllustration */}
-            <div className="bg-paper p-6 border border-steel-blue/30 rounded-lg shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 space-y-4">
                 <h2 className="font-sans text-xl font-bold text-navy">Our Core Belief</h2>
                 <p className="font-sans text-sm text-slate-gray leading-relaxed">
@@ -55,7 +55,7 @@ export default function AboutPage() {
                   Our vision is structured around four pillars: delivering custom SaaS for operating businesses, launching and nurturing early-stage startups, building simple websites and e-commerce tools for small businesses, and scaling mature operations with advanced data and automation tools.
                 </p>
               </div>
-              <div className="md:col-span-5 bg-paper p-2 rounded border border-steel-blue/20 shadow-inner">
+              <div className="md:col-span-5">
                 <ManifestoIllustration />
               </div>
             </div>

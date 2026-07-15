@@ -28,8 +28,8 @@ export default function WorkPage() {
       <section className="py-16 bg-paper">
         <PageContainer>
           <div className="space-y-8">
-            {/* Cognara Case Study - Full Width Feature Card */}
-            <div className="bg-paper p-6 border border-steel-blue/30 rounded-lg flex flex-col md:flex-row gap-6 shadow-sm hover:border-navy transition-all duration-300">
+            {/* Cognara Case Study - Full Width Feature */}
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 flex-wrap">
