@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Creed Tech",
+  description: "Who we are, why we build, and how we operate as a software studio based in Lagos, Nigeria.",
+};
+
 
 import Link from "next/link";
 import PageContainer from "@/components/PageContainer";

@@ -14,9 +14,10 @@ This completes the planning sequence: sitemap, every remaining page layout, tech
 /start-a-project     The multi-step request flow
 /contact             Simple direct contact — for anything outside a project request
 /faq                 Frequently asked questions — process, pricing, honesty
+/privacy             Privacy policy — what's collected, why, and how it's handled
 ```
 
-Kept deliberately lean — seven destinations, not a sprawling site. Each pillar gets a full section rather than its own separate page for v1, since that's less to build and maintain while still giving each pillar real depth; this can split into separate pages later if one pillar needs more room to grow.
+Kept deliberately lean — eight destinations, not a sprawling site. Each pillar gets a full section rather than its own separate page for v1, since that's less to build and maintain while still giving each pillar real depth; this can split into separate pages later if one pillar needs more room to grow.
 
 ---
 
@@ -149,6 +150,61 @@ One line: "Things people usually ask before starting a project."
 ```
 - Written in the same plain, human tone as the rest of the site — no legalistic FAQ phrasing
 - The "Honesty" section isn't hidden or softened — it's a direct extension of the same proven-vs-emerging framing used throughout the site
+
+---
+
+## 7b. SEO Setup
+
+**Page titles and meta descriptions, one per page:**
+
+| Page | Title | Meta Description |
+|---|---|---|
+| Home | Creed Tech — Software Studio, Lagos, Nigeria | We build software that helps people and companies grow — from a first idea to something much bigger. |
+| What We Do | What We Do — Creed Tech | Four ways we help people and companies build something bigger: SaaS for companies, startup growth, small business tools, and scaling support. |
+| Work | What We've Built — Creed Tech | Real products built by Creed Tech, including Cognara, an AI-powered adaptive learning platform. |
+| About | About Creed Tech | Who we are, why we build, and how we operate as a software studio based in Lagos, Nigeria. |
+| Start a Project | Start a Project — Creed Tech | Tell us what you need — a few quick questions, then we'll reach out to talk it through. |
+| Contact | Contact — Creed Tech | Reach Creed Tech directly by email or WhatsApp for general questions, partnerships, or press. |
+| FAQ | FAQ — Creed Tech | Answers to common questions about our process, pricing, and how we work. |
+| Privacy | Privacy Policy — Creed Tech | How Creed Tech collects, uses, and protects your information. |
+
+**Open Graph share image:** one shared image (1200x630px) used across all pages when a link is shared on WhatsApp/LinkedIn/X — the three-square logo mark on the Ink Charcoal background, with "Creed Tech" and the tagline, matching the site's actual visual identity (not a generic template preview image).
+
+**Basic technical SEO:** each page needs a unique `<title>` and meta description (from the table above), a single `sitemap.xml` listing all eight pages, and a `robots.txt` allowing normal indexing. Nothing more elaborate needed for a lean 8-page site.
+
+---
+
+## 7c. Privacy Policy
+
+```
+[ Page header ]
+"Privacy Policy"
+One line: "How we handle your information, in plain terms."
+
+[ What we collect ]
+When you submit a project request or contact form, we collect your
+name, email, phone number, company name (if applicable), and any
+project details you share.
+
+[ Why we collect it ]
+Solely to respond to your request and, if you choose to work with us,
+to deliver the project. Nothing you share is used for any other purpose.
+
+[ How it's stored ]
+Your information is stored securely in our database and is not sold,
+rented, or shared with third parties, except as needed to deliver our
+services (e.g. payment processing through Paystack).
+
+[ Your rights ]
+You can request to see, correct, or delete your information at any
+time by contacting us at hello@creedtech.com.
+
+[ Updates ]
+This policy may be updated from time to time; the most recent version
+will always be available on this page.
+```
+- Written in the same plain, honest tone as the rest of the site — no dense legal boilerplate
+- This is a genuine, good-faith privacy notice appropriate for a lean small-business site — not a substitute for formal legal review if Creed Tech's data handling grows more complex later
 
 ---
 

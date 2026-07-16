@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "What We've Built — Creed Tech",
+  description: "Real products built by Creed Tech, including Cognara, an AI-powered adaptive learning platform.",
+};
+
 
 import Link from "next/link";
 import PageContainer from "@/components/PageContainer";

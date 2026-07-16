@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Start a Project — Creed Tech",
+  description: "Tell us what you need — a few quick questions, then we'll reach out to talk it through.",
+};
+
 
 import React, { Suspense } from "react";
 import PageContainer from "@/components/PageContainer";

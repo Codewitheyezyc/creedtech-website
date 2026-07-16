@@ -23,12 +23,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-paper/90 backdrop-blur-md border-b border-steel-blue/20">
       <PageContainer className="h-16 flex items-center justify-between">
-        {/* Logo and brand name */}
-        <Link href="/" className="flex items-center gap-1.5 group z-50">
+        {/* Logo only — brand name lives in the footer (Notion-style) */}
+        <Link href="/" className="flex items-center group z-50" aria-label="Creed Tech — Home">
           <Logo className="h-8 w-8 transition-transform group-hover:scale-105 duration-200" />
-          <span className="font-sans font-bold text-lg text-charcoal tracking-tight">
-            Creed Tech
-          </span>
         </Link>
 
         {/* Desktop Links */}

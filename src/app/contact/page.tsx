@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact — Creed Tech",
+  description: "Reach Creed Tech directly by email or WhatsApp for general questions, partnerships, or press.",
+};
+
 
 import React from "react";
 import PageContainer from "@/components/PageContainer";

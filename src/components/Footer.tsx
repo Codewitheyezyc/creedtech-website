@@ -48,9 +48,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8">
           {/* Logo, Tagline & Social column */}
           <div className="col-span-2 md:col-span-6 space-y-4">
-            <Link href="/" className="flex items-center gap-1.5 group w-fit">
-              <Logo className="h-8 w-8 transition-transform group-hover:scale-105 duration-200" />
-              <span className="font-sans font-bold text-lg text-charcoal tracking-tight">
+            <Link href="/" className="flex items-center gap-2 group w-fit">
+              <Logo className="h-10 w-10 transition-transform group-hover:scale-105 duration-200" />
+              <span className="font-sans font-black text-2xl text-charcoal tracking-tight">
                 Creed Tech
               </span>
             </Link>
@@ -103,6 +103,11 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="font-sans text-sm text-slate-gray hover:text-navy transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="font-sans text-sm text-slate-gray hover:text-navy transition-colors">
+                  Privacy
                 </Link>
               </li>
             </ul>
